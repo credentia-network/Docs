@@ -73,7 +73,7 @@ Casper Self-Sovereign Identity Framework SDK is the JavaScript SDK based on Vera
 
 **Casper TestNet:**
 
-CasperDID: [https://testnet.cspr.live/deploy/42a30c6cf4f4343f0f99c295a945f1931386228dcc320407d854972a1bd524a3](https://www.notion.so/1386228dcc320407d854972a1bd524a3)
+CasperDID: [https://testnet.cspr.live/deploy/42a30c6cf4f4343f0f99c295a945f1931386228dcc320407d854972a1bd524a3](https://testnet.cspr.live/deploy/42a30c6cf4f4343f0f99c295a945f1931386228dcc320407d854972a1bd524a3)
 
 CasperVCRevocationRegistries:
 
