@@ -1,22 +1,27 @@
 # Casper DID Smart Contract Guide
 
+## Description
+This guide provides step-by-step guide to compile, deploy and operate DID smart contract in the Casper blockchain test network. It is expected that the reader has basic understanding of how Casper blockchain works, understands the blockchain transaction lifecycle flow and is fluent in Rust and JavaScript.
+
+## Installing tookits and building the project
+
 1. Install Rust
     1. Install Rust (if you don’t have it installed already). Please follow this document for installation guidelines: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
     2. Install wasm target builder. Please follow this document for installation guidelines: [https://www.hellorust.com/setup/wasm-target/](https://www.hellorust.com/setup/wasm-target/)
     3. Set "nightly" toolchain
-    `bash
-        > rustup update
-        > rustup target add wasm32-unknown-unknown --toolchain nightly
-    `
+    ```console
+        rustup update
+        rustup target add wasm32-unknown-unknown --toolchain nightly
+    ```
 
-2. Build the project
-```
+2. Build the project: simply build with npm
+```console
     npm i
 ```
 
 then
 
-```
+```console
     npm build
 ```
 
@@ -40,6 +45,9 @@ then
         ![images/Casper_DID_Smart_Contract_guide/image1.png](images/Casper_DID_Smart_Contract_guide/image1.png)
 
     2. Make sure you’ve received test tokens. It takes about 5 min for them to arrive (average block time in casper testnet is 3 min)
+
+## Deploying and Operating DID Smart Contract
+
 5. Deploy DID contract with the following command:
     1. node ./js/did/deploy_did.js
     2. A contract has been created:
