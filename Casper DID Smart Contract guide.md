@@ -1,4 +1,4 @@
-# Casper DID Smart Contract Guide
+# Casper DID Smart Contract Tutorial
 
 ## Description
 This guide provides step-by-step guide to compile, deploy and operate DID smart contract in the Casper blockchain test network. It is expected that the reader has basic understanding of how Casper blockchain works, understands the blockchain transaction lifecycle flow and is fluent in Rust and JavaScript.
