@@ -1,14 +1,14 @@
 # Casper DID Smart Contract Guide
 
 1. Install Rust
-    1.
-    2. Install Rust (if you don’t have it installed already)
-        1. [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
-    3. Install wasm target builder
-        1. [https://www.hellorust.com/setup/wasm-target/](https://www.hellorust.com/setup/wasm-target/)
-    4. Set nightly toolchain
-        1. rustup update
-        2. rustup target add wasm32-unknown-unknown --toolchain nightly
+    1. Install Rust (if you don’t have it installed already). Please follow this document for installation guidelines: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
+    2. Install wasm target builder. Please follow this document for installation guidelines: [https://www.hellorust.com/setup/wasm-target/](https://www.hellorust.com/setup/wasm-target/)
+    3. Set "nightly" toolchain
+    `bash
+        > rustup update
+        > rustup target add wasm32-unknown-unknown --toolchain nightly
+    `
+
 2. Build the project
 ```
     npm i
