@@ -1,57 +1,59 @@
-# Casper DID Documentation
+# SSI Framework Overview
 
-# Introduction
+## Casper DID Documentation
+
+## Introduction
 
 Casper Self-Sovereign Identity Framework is created to make use of W3C [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) compliant documents, creating/managing W3C [Decentralized Identifiers (DIDs) v1.03 spec](https://www.w3.org/TR/did-core) compliant DIDs and more. The client SDK contains a library and tooling to interact with the Casper blockchain and a suite of tools to manage a full lifecycle of verifiable credentials.
 
-## What is this all about?
+### What is this all about?
 
 Casper Self-Sovereign Identity Framework is the project intended to create base layer infrastructure over Casper Blockchain network that allows developers to make use and integrate Verifiable Credentials into their products (assuming these products are also Casper Blockchain based).
 
 Features:
 
-- Creating/Manipulating/Revoking DIDs derived from Casper blockchain addresses (and keys)
-- Resolving Casper DIDs using Universal Resolver
-- Creating/Revoking Verifiable Credentials
+* Creating/Manipulating/Revoking DIDs derived from Casper blockchain addresses (and keys)
+* Resolving Casper DIDs using Universal Resolver
+* Creating/Revoking Verifiable Credentials
 
-    ## What is it for?
+### What is it for?
 
 Decentralized identifiers (DIDs) can be used in a variety of use cases, for example: no-password authentication. More information about use cases can be found [here](https://www.w3.org/TR/did-use-cases/). Here we provide a toolkit for creating and manipulating the DIDs created for Casper Blockchain network.
 
 Verifiable Credentials (VC) is the digital document format that usually describes a fact about a subject or a relationship between different subjects, and is issued by the respective Issuer. When referencing to the Subjects or Issuer, VCs make use of DIDs (so requires for DIDs to be created before referenced in VCs). Also, VC verification procedure requires that Verifier validates all referenced DIDs to make sure they were valid as of the issuance date. DID validation process is called “resolution” and is performed with the help of a so-called DID resolver.
 
-## Roadmap
+### Roadmap
 
 Below is the project Implementation roadmap. Please note that the dates are approximate. We are working hard to stay with these dates.
 
-- 08/2021 Roadmap, Whitepaper, Technical overview
-- 09/2021 Casper DIDs (CRUR operations)
-- 10/2021 Verifiable Credentials (CRUR operations + revocation lists)
-- 10/2021 Demo application
+* 08/2021 Roadmap, Whitepaper, Technical overview
+* 09/2021 Casper DIDs (CRUR operations)
+* 10/2021 Verifiable Credentials (CRUR operations + revocation lists)
+* 10/2021 Demo application
 
-    ## What we not do
+### What we not do
 
 Here we create a toolkit for using with the Casper Blockchain network. By default, this toolkit is not intended to be used for creating DIDs for methods other than “casper”. Same to DIDs, Verifiable credentials toolkit can be used only with Casper based DIDs.
 
 The toolkit is based on opensource Veramo toolkit, which can be configured to use different DIDs and VC Storages by adding and configuring plugins. So, in case other DID methods or VC storages are required, they can be added manually by adding and configuring related Veramo plugins.
 
-1. Design & Architecture
+## Design & Architecture
 
-    ## Smart contracts Architecture
+### Smart contracts Architecture
 
 Casper Self-Sovereign Identity Framework is backed by a set of the smart contracts keeping the DID registry and VC revocation lists.
 
 ![images/image2.png](images/image2.png)
 
-### CasperDID contract
+#### CasperDID contract
 
 Casper DID is a registry contract for DIDs. It’s main purpose is to store DID Attributes, Delegates and revoked DIDs. This contract allows users to self-declare ownership over DID and then checks for the valid owner for every operation related to this DID.
 
-### CasperVCRevocationRegistry and RevocationRegistry contracts
+#### CasperVCRevocationRegistry and RevocationRegistry contracts
 
 This is the factory contract for creating and managing VC RevocationRegistry contracts. RevocationRegistry can be deployed by any users with the valid DID set as an owner. Then is users becomes a single operator of the revocation list and is the only allowed user to reference VCs in it (i.e. revoke VCs)
 
-*Note:* It’s recommended that Issuers use a single RevocationRegistry per a VC type (or schema).
+_Note:_ It’s recommended that Issuers use a single RevocationRegistry per a VC type (or schema).
 
 Veramo -> Casper DID Registry contract. Describe how
 
@@ -59,17 +61,17 @@ Data flow for verifiable credentials.
 
 Presentation exchange (request -> verifiable credentials issuing -> validation)
 
-## Universal resolver and Casper DID infrastructure
-s
+### Universal resolver and Casper DID infrastructure
+
 The Universal resolver is the service that is built on highly modular architecture and has already aggregated components (drivers) to access and read the majority of the existing DID methods. Casper DID infrastructure will also provide a driver that can be used with Universal Resolver so that DIDs backed by CasperDID contracts can be used by Universal resolver users.
 
-## Casper Self-Sovereign Identity Framework SDK
+### Casper Self-Sovereign Identity Framework SDK
 
 Casper Self-Sovereign Identity Framework SDK is the JavaScript SDK based on Veramo SDK with 2 extra modules to access DID and VC data backed by Casper DID smart contracts. SDK is designed the way that it doesn’t override (fork) Veramo, but rather references existing implementation and embeds Casper-specific modules on initialization stage. The architecture of Veramo with Casper-specific modules is shown on the diagram below:
 
 ![images/image1.png](images/image1.png)
 
-## On-chain infrastructure
+### On-chain infrastructure
 
 **Casper TestNet:**
 
@@ -83,13 +85,11 @@ CasperDID:
 
 CasperVCRevocationRegistries:
 
-*Note*: Valid Casper testnet nodes can be found here: [https://testnet.cspr.live/tools/peers](https://testnet.cspr.live/tools/peers)
+_Note_: Valid Casper testnet nodes can be found here: [https://testnet.cspr.live/tools/peers](https://testnet.cspr.live/tools/peers)
 
-#
+## Concepts
 
-1. Concepts
-
-    ## DID
+### DID
 
 DID are essentially the Decentralized IDentifiers. DID are designed to be globally unique identifier that allow their respective owners (a.k.a. controllers) to prove they have a cryptographic control over them. DIDs might not be assigned to humans only, but reasonably to anything. According to [DID spec](https://www.w3.org/TR/did-core/),
 
@@ -160,25 +160,26 @@ Note that Casper DIDs support only one key as of now. The key is present in the 
 
 It’s important to understand that they keys associated with the DID might not be the keys used to send the transaction on chain (essentially, they are independent). A User might not have any blockchain tokens to write anything, but still is able to create a DID corresponding to his/her key and ask another User(Authority) to register his/her DID on chain. From the other side, when Authority recorded DID on chain, it cannot alter/remove it because only the User owns and controls the key associated with that particular DID.
 
-1. Verifiable Credentials & Presentation
-    1. Paper credentials vs Verifiable Credentials
+## Verifiable Credentials & Presentation
+
+Paper credentials vs Verifiable Credentials
 
 In general, credentials are a part of a human's daily life. They are used to assert one capability of doing something, pretending to be someone, etc. Historically credentials were issued in a paper form and the process of verification was relying completely on “hard-to-reproduce” components of the paper document. The key point here is that verification was done by humans, so the security methods were relying on humans capability to read, verify and attest them. They were not designed to be attested by machines.
 
 Using credentials in the digital world requires for them to be in machine readable form, so the security components should be “hard-to-reproduce” by machines, and attestation and verification methods to be suitable for machines primarily. Said that, when it comes to digital credentials design, it looks very intuitive that “asymmetric cryptography” was selected as a “hard-to-reproduce” security component and a JSON was selected as a representation form for digital credentials. Both components were designed to be operated by machines, not by humans. This all is summarized in the [Verifiable Credentials Data Model 1.0 (VCDM)](https://www.w3.org/TR/vc-data-model/) specification, which provides a standard approach to create, share and verify credentials in the digital space, in a way that they are machine readable, privacy respecting and cryptographically secure.
 
-### Participants and workflow
+#### Participants and workflow
 
-- Credentials are issued by an **Issuer**.
-- **Issuer** issues the credential about a **subject.** If the credential is revocable, the Issuer to specify a way revocation status must be checked. It is not necessary that revocation is managed by the issuer, the issuer might designate a different authority for revocation.
-- **Issuer** sends the credential to the **holder**. (The **holder** might be the same as the **subject**)
-- A **Verifier** is an entity willing to check if the **holder** possesses certain credentials. It requests a **presentation** about those credentials. To protect against replay attacks, (a verifier receiving the presentation and replaying the same presentation at some other verifier), a verifier must supply a challenge that must be embedded in the presentation.
-- **Holder** creates a **presentation** for the requested credentials. The **presentation** must indicate which credentials it is about and must be signed by the **holder** of the credentials.
-- When a presentation is received by the **Verifier**, it checks whether the presentation contains the signature from the **holder** on the presentation and the challenge. Then, the validity of each credential in the **presentation** is checked. This includes:
-    - validating the correctness of the data model of the credential (schema)
-    - the authenticity (by verifying the issuer's signature)
-    - revocation status (if the credential is revocable)
-        1. Issuing Verifiable Credentials
+* Credentials are issued by an **Issuer**.
+* **Issuer** issues the credential about a **subject.** If the credential is revocable, the Issuer to specify a way revocation status must be checked. It is not necessary that revocation is managed by the issuer, the issuer might designate a different authority for revocation.
+* **Issuer** sends the credential to the **holder**. (The **holder** might be the same as the **subject**)
+* A **Verifier** is an entity willing to check if the **holder** possesses certain credentials. It requests a **presentation** about those credentials. To protect against replay attacks, (a verifier receiving the presentation and replaying the same presentation at some other verifier), a verifier must supply a challenge that must be embedded in the presentation.
+* **Holder** creates a **presentation** for the requested credentials. The **presentation** must indicate which credentials it is about and must be signed by the **holder** of the credentials.
+* When a presentation is received by the **Verifier**, it checks whether the presentation contains the signature from the **holder** on the presentation and the challenge. Then, the validity of each credential in the **presentation** is checked. This includes:
+  * validating the correctness of the data model of the credential (schema)
+  * the authenticity (by verifying the issuer's signature)
+  * revocation status (if the credential is revocable)
+    1. Issuing Verifiable Credentials
 
 In order to issue a Verifiable Credential (VC), the Issuer to have a “well-known” public key (a Certificate) that is accessible by the holder and verifier to verify the credentials digital signature with. Issuer is specified by its DID, which is present in the credential in the issuer field. Below is an example of the VC document with Issuer and proof specified.
 
@@ -226,7 +227,7 @@ verificationMethod: 'did:casper:6174cf2e6f8fed1715c9a3bace9c50bfe572eecb763b0ed3
 }
 ```
 
-### Verifiable Presentation
+#### Verifiable Presentation
 
 The Presentation is created by the Holder and is signed with his/her private key. For the Verifier to verify the presentation, this signature must be verified as well as Issuer’s signature. For doing this, a Verifier to know the Holder’s public key. A natural way to achieve this is to ensure the Holder uses DID for self identification, which can be independently resolved by the Verifier and public key data can be extracted from corresponding DID document.
 
@@ -316,7 +317,7 @@ verificationMethod: 'did:casper:6174cf2e6f8fed1715c9a3bace9c50bfe572eecb763b0ed3
 }
 ```
 
-### Revocation status
+#### Revocation status
 
 In case the credentials are revocable, the Issuer has to specify how the revocation status must be checked in the credentialStatus field. On Casper, the revocation is managed with the appropriate on-chain revocation registry for a specified Verifiable Credentials type. Such registry is identified by its ID and the Issuer embeds this ID in the credentialStatus field. An example of the credentials with revocation registry data:
 
