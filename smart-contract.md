@@ -1,11 +1,11 @@
-# Casper DID Smart Contract Tutorial
+# Casper DID Smart Contract Tutorial 
 
 ## Description
 This guide provides step-by-step guide to compile, deploy and operate DID smart contract in the Casper blockchain test network. It is expected that the reader has basic understanding of how Casper blockchain works, understands the blockchain transaction lifecycle flow and is fluent in Rust and JavaScript.
 
 ## Installing tookits and building the project
 
-1. Install Rust
+1. Install Rust 
     1. Install Rust (if you don’t have it installed already). Please follow this document for installation guidelines: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
     2. Install wasm target builder. Please follow this document for installation guidelines: [https://www.hellorust.com/setup/wasm-target/](https://www.hellorust.com/setup/wasm-target/)
     3. Set "nightly" toolchain
