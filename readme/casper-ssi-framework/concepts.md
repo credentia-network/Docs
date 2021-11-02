@@ -1,91 +1,4 @@
-# SSI Framework Overview
-
-## Casper DID Documentation
-
-## Introduction
-
-Casper Self-Sovereign Identity Framework is created to make use of W3C [Verifiable Credentials Data Model 1.0](https://www.w3.org/TR/vc-data-model/) compliant documents, creating/managing W3C [Decentralized Identifiers (DIDs) v1.03 spec](https://www.w3.org/TR/did-core) compliant DIDs and more. The client SDK contains a library and tooling to interact with the Casper blockchain and a suite of tools to manage a full lifecycle of verifiable credentials.
-
-### What is this all about?
-
-Casper Self-Sovereign Identity Framework is the project intended to create base layer infrastructure over Casper Blockchain network that allows developers to make use and integrate Verifiable Credentials into their products (assuming these products are also Casper Blockchain based).
-
-Features:
-
-* Creating/Manipulating/Revoking DIDs derived from Casper blockchain addresses (and keys)
-* Resolving Casper DIDs using Universal Resolver
-* Creating/Revoking Verifiable Credentials
-
-### What is it for?
-
-Decentralized identifiers (DIDs) can be used in a variety of use cases, for example: no-password authentication. More information about use cases can be found [here](https://www.w3.org/TR/did-use-cases/). Here we provide a toolkit for creating and manipulating the DIDs created for Casper Blockchain network.
-
-Verifiable Credentials (VC) is the digital document format that usually describes a fact about a subject or a relationship between different subjects, and is issued by the respective Issuer. When referencing to the Subjects or Issuer, VCs make use of DIDs (so requires for DIDs to be created before referenced in VCs). Also, VC verification procedure requires that Verifier validates all referenced DIDs to make sure they were valid as of the issuance date. DID validation process is called “resolution” and is performed with the help of a so-called DID resolver.
-
-### Roadmap
-
-Below is the project Implementation roadmap. Please note that the dates are approximate. We are working hard to stay with these dates.
-
-* 08/2021 Roadmap, Whitepaper, Technical overview
-* 09/2021 Casper DIDs (CRUR operations)
-* 10/2021 Verifiable Credentials (CRUR operations + revocation lists)
-* 10/2021 Demo application
-
-### What we not do
-
-Here we create a toolkit for using with the Casper Blockchain network. By default, this toolkit is not intended to be used for creating DIDs for methods other than “casper”. Same to DIDs, Verifiable credentials toolkit can be used only with Casper based DIDs.
-
-The toolkit is based on opensource Veramo toolkit, which can be configured to use different DIDs and VC Storages by adding and configuring plugins. So, in case other DID methods or VC storages are required, they can be added manually by adding and configuring related Veramo plugins.
-
-## Design & Architecture
-
-### Smart contracts Architecture
-
-Casper Self-Sovereign Identity Framework is backed by a set of the smart contracts keeping the DID registry and VC revocation lists.
-
-![images/image2.png](images/image2.png)
-
-#### CasperDID contract
-
-Casper DID is a registry contract for DIDs. It’s main purpose is to store DID Attributes, Delegates and revoked DIDs. This contract allows users to self-declare ownership over DID and then checks for the valid owner for every operation related to this DID.
-
-#### CasperVCRevocationRegistry and RevocationRegistry contracts
-
-This is the factory contract for creating and managing VC RevocationRegistry contracts. RevocationRegistry can be deployed by any users with the valid DID set as an owner. Then is users becomes a single operator of the revocation list and is the only allowed user to reference VCs in it (i.e. revoke VCs)
-
-_Note:_ It’s recommended that Issuers use a single RevocationRegistry per a VC type (or schema).
-
-Veramo -> Casper DID Registry contract. Describe how
-
-Data flow for verifiable credentials.
-
-Presentation exchange (request -> verifiable credentials issuing -> validation)
-
-### Universal resolver and Casper DID infrastructure
-
-The Universal resolver is the service that is built on highly modular architecture and has already aggregated components (drivers) to access and read the majority of the existing DID methods. Casper DID infrastructure will also provide a driver that can be used with Universal Resolver so that DIDs backed by CasperDID contracts can be used by Universal resolver users.
-
-### Casper Self-Sovereign Identity Framework SDK
-
-Casper Self-Sovereign Identity Framework SDK is the JavaScript SDK based on Veramo SDK with 2 extra modules to access DID and VC data backed by Casper DID smart contracts. SDK is designed the way that it doesn’t override (fork) Veramo, but rather references existing implementation and embeds Casper-specific modules on initialization stage. The architecture of Veramo with Casper-specific modules is shown on the diagram below:
-
-![images/image1.png](images/image1.png)
-
-### On-chain infrastructure
-
-**Casper TestNet:**
-
-CasperDID: [https://testnet.cspr.live/deploy/42a30c6cf4f4343f0f99c295a945f1931386228dcc320407d854972a1bd524a3](https://testnet.cspr.live/deploy/42a30c6cf4f4343f0f99c295a945f1931386228dcc320407d854972a1bd524a3)
-
-CasperVCRevocationRegistries:
-
-**Casper Mainnet:**
-
-CasperDID:
-
-CasperVCRevocationRegistries:
-
-_Note_: Valid Casper testnet nodes can be found here: [https://testnet.cspr.live/tools/peers](https://testnet.cspr.live/tools/peers)
+# Concepts
 
 ## Concepts
 
@@ -160,7 +73,7 @@ Note that Casper DIDs support only one key as of now. The key is present in the 
 
 It’s important to understand that they keys associated with the DID might not be the keys used to send the transaction on chain (essentially, they are independent). A User might not have any blockchain tokens to write anything, but still is able to create a DID corresponding to his/her key and ask another User(Authority) to register his/her DID on chain. From the other side, when Authority recorded DID on chain, it cannot alter/remove it because only the User owns and controls the key associated with that particular DID.
 
-## Verifiable Credentials & Presentation
+### Verifiable Credentials & Presentation
 
 Paper credentials vs Verifiable Credentials
 
