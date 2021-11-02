@@ -2,7 +2,7 @@
 
 ## Quick Navigation
 
-[pdf](.pdf)
+[Whitepaper](https://github.com/credentia-network/Docs/blob/main/CASPER.pdf)
 
 ## Introduction
 Our goal is to enable developers to create trusted data exchange systems on top of Casper Network. We're simplifying development of digital identity and digital authenticated documents for any external developer.
