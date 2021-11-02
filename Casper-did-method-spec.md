@@ -2,8 +2,6 @@
 
 ## Author
 
-- Credentia team.
-
 This document is derived from [casper DID spec](https://github.com/decentralized-identity/casper-did-resolver/blob/master/doc/did-method-spec.md) and is following it in many aspects.
 
 ## Preface
