@@ -4,14 +4,6 @@
 
 [Whitepaper](CASPER.pdf)
 
-{% content-ref url="Casper-SSI-Framework.md" %}
-[Casper-SSI-Framework.md](Casper-SSI-Framework.md)
-{% endcontent-ref %}
-
-{% content-ref url="./" %}
-[.](./)
-{% endcontent-ref %}
-
 ## Introduction
 
 Our goal is to enable developers to create trusted data exchange systems on top of Casper Network. We're simplifying development of digital identity and digital authenticated documents for any external developer. The resulting solution must provide tools for developers to generate and manage digital identities (DIDs) and documents (VCs). The solution contains:
