@@ -22,7 +22,7 @@ This guide provides step-by-step guide to compile, deploy and operate DID smart 
     then
 
     ```console
-    npm build
+    npm run build
     ```
 
 3. Install casper signer [https://cspr.live/sign-in](https://cspr.live/sign-in)
