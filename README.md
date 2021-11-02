@@ -28,7 +28,11 @@ Our goal is to enable developers to create trusted data exchange systems on top 
 
 The solution is publicly available on GitHub under MIT license.
 
-## **Customer types**
+## Architecture
+
+![Project overview](images/image2.png)
+
+## **Customer personas**
 
 ### **Developers**
 
