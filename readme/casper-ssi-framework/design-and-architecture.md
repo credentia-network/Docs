@@ -44,7 +44,7 @@ CasperVCRevocationRegistries:
 
 **Casper Mainnet:**
 
-CasperDID: 016fa6a9fee45c222d15b7306357535e4e3303d408ec18fdde7fe26d791454a140
+CasperDID: 57723a54672fe584293daed7e4b98d1cf1936a982043ff50888a8763c3d97d3f
 
 CasperVCRevocationRegistries:
 
