@@ -11,6 +11,7 @@ Whitepaper: [**The Concept of Self-Sovereign Identity in the Web3 Context**](htt
 [Using Casper DID smart contract. Step-by-step guide](readme/smart-contract.md)
 
 [Casper DID Registry Smart contract API](readme/API-DIDRegistry.md)
+
 [Casper VC Registry Smart contract API](readme/API-VCRegistry.md)
 
 
