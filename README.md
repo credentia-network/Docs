@@ -4,17 +4,15 @@
 
 Whitepaper: [**The Concept of Self-Sovereign Identity in the Web3 Context**](https://github.com/credentia-network/Docs/commit/23fec27926ecf96803a07fb28951ab08b4f48d61)****
 
-{% content-ref url="readme/casper-ssi-framework/" %}
-[casper-ssi-framework](readme/casper-ssi-framework/)
-{% endcontent-ref %}
+[Casper SSI Framework General document](readme/casper-ssi-framework/)
 
-{% content-ref url="readme/casper-did-method-spec.md" %}
-[casper-did-method-spec.md](readme/casper-did-method-spec.md)
-{% endcontent-ref %}
+[Casper DID method specification](readme/casper-did-method-spec.md)
 
-{% content-ref url="readme/smart-contract.md" %}
-[smart-contract.md](readme/smart-contract.md)
-{% endcontent-ref %}
+[Using Casper DID smart contract. Step-by-step guide](readme/smart-contract.md)
+
+[Casper DID Registry Smart contract API](readme/API-DIDRegistry.md)
+[Casper VC Registry Smart contract API](readme/API-VCRegistry.md)
+
 
 ## Introduction
 
