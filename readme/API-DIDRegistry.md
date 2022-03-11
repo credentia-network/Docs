@@ -3,7 +3,7 @@
 Did contract is the implementation of the decentralized identity registry implemented according to [casper DID spec](./casper-did-method-spec.md).
 
 
-## Function changeOwner
+## Function changeOwner()
 Function changeOwner changes the owner of the identity.
 
 Has 2 parameters:
