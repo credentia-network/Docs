@@ -2,7 +2,7 @@
 
 ## Quick Navigation
 
-Whitepaper: [**The Concept of Self-Sovereign Identity in the Web3 Context**](https://github.com/credentia-network/Docs/commit/23fec27926ecf96803a07fb28951ab08b4f48d61)****
+Whitepaper: [**The Concept of Self-Sovereign Identity in the Web3 Context**](https://github.com/credentia-network/Docs/commit/23fec27926ecf96803a07fb28951ab08b4f48d61)
 
 [Casper SSI Framework General document](readme/casper-ssi-framework/)
 
