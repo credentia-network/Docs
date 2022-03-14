@@ -23,8 +23,8 @@ Our goal is to enable developers to create trusted data exchange systems on top 
 * off-chain backend logic
 * smart contracts on Casper Network
 * documentation
-* _frontend demo applications (WIP)_
-* _Verifiable Credentials SDK (WIP)_
+* frontend demo applications (WIP)
+* Verifiable Credentials SDK (WIP)
 
 The solution is publicly available on GitHub under MIT license.
 
