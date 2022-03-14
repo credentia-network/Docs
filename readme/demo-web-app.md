@@ -1,3 +1,19 @@
+# Features Overview
+
+The goal of this application is to provide comprehensive showcase of the Casper SSI Framework in a form of demo web application.
+
+Features of this application are:
+- Creation and management of DIDs
+- Signin in with Casper Signer
+- Issuance of Verifiable Credentials (based on preset templates)
+- Wallet for Verifiable Credentials for end user (diaply and management)
+- Revocation of Verifiable Credentials by the issuer
+- Requesting selective data from the end users by the Verifier
+- Accepting and sharing Verifiable Credentials
+- Viewing Credential data
+
+All these features work directly with Casper Network contracts deployed on testnet. Please, refer to the documentation to see contracts addresses and SDK documentation.
+
 # Video Overview of Casper SSI Web App & Framework
 
 1. Create Account with Casper: https://drive.google.com/file/d/1boMIEVwURs0tFB1lMUdgDLD0rJS6WKh4/view?usp=sharing
