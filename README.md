@@ -14,6 +14,7 @@ Whitepaper: [**The Concept of Self-Sovereign Identity in the Web3 Context**](htt
 
 [Casper VC Registry Smart contract API](readme/API-VCRegistry.md)
 
+[Casper SSI Framework DEMO WEB APP](readme/demo-web-app.md)
 
 ## Introduction
 
