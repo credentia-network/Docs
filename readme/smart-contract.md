@@ -59,17 +59,57 @@ This guide provides step-by-step guide to compile, deploy and operate DID smart 
     node ./js/did/deploy_did.js
     ```
 
-    1. A contract has been created:
+    2. A contract has been deployed by this hash:
 
     ```
     Deploy CasperDIDContract hash: 28db52d6093e10a088103fef39d646b5c7fb203bf23d039c7d8f18bc4df778c
 
-    Contract Hash = hash-6a810712e737d78f1c57bb2123308cc08d16f61a67e804b3bba4325578b97e18
     ```
+    3. To get the hash of contract go to casperlab scan to view the transaction log [https://testnet.cspr.live/deploy/28db52d6093e10a088103fef39d646b5c7fb203bf23d039c7d8f18bc4df778c](https://testnet.cspr.live/deploy/28db52d6093e10a088103fef39d646b5c7fb203bf23d039c7d8f18bc4df778c)
+    
+    4. Click "Show raw data" and looking for json object with :
+    ```
+    root: {
+        ...
+        json:{
+            ...
+            execution_results: {
+                0: {
+                    result":{
+                        "Success":{
+                        ...
+                            "effect":{
+                            ...
+                                "transforms":
+                                    ...
+                                    [
+                                        {
+                                            "key":"account-hash-4d0c8f487e0204372fa26875d564c0548540526081df2edd26acfa7a77e47adf"
+                                            "transform":{
+                                                "AddKeys":[
+                                                    0:{
+                                                        "key":"hash-6a810712e737d78f1c57bb2123308cc08d16f61a67e804b3bba4325578b97e18"
+                                                        "name":"CasperDIDRegistry"
+                                                    }
+                                                ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    ```
+    where name should be the name of contract. You need to extract hash
+    5. 
 2.  Copy a Contract hash value into /js/constants.js under the CONTRACT\_DID\_HASH key. It should look like this:
 
     ```
-    CONTRACT_HASH: "hash-6a810712e737d78f1c57bb2123308cc08d16f61a67e804b3bba4325578b97e18",
+    CONTRACT_DID_HASH: "hash-6a810712e737d78f1c57bb2123308cc08d16f61a67e804b3bba4325578b97e18",
     ```
 3. Let’s have fun testing contract now! :)
 
