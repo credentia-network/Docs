@@ -1,6 +1,6 @@
 # Casper DID Method Specification
 
-This document is derived from [casper DID spec](https://github.com/decentralized-identity/casper-did-resolver/blob/master/doc/did-method-spec.md) and is following it in many aspects.
+This document is derived from [casper DID spec](https://github.com/credentia-network/Docs/blob/main/readme/casper-did-method-spec.md) and is following it in many aspects.
 
 ## Preface
 
@@ -388,7 +388,7 @@ Applications must take precautions when using versioned DID URIs. If a key is co
 
 ## Reference Implementations
 
-The code at [https://github.com/credentia-network/caspercontracts](casper-did-method-spec.md) is intended to present a reference implementation of this DID Registry contract.
+The code at [https://github.com/credentia-network/caspercontracts](https://github.com/credentia-network/Docs/blob/main/readme/casper-did-method-spec.md) is intended to present a reference implementation of this DID Registry contract.
 
 ## References
 
